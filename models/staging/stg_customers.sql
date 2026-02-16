@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('ecom', 'raw_customers') }}
+    select * from {{ source('ecom', 'customers') }}
 
 ),
 
@@ -20,4 +20,5 @@ renamed as (
 
 )
 
-select * from renamed
+select * from renamed 
+

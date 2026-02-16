@@ -74,4 +74,4 @@ customer_order_count as (
 
 )
 
-select * from customer_order_count
+select * from customer_order_count 

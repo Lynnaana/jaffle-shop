@@ -12,6 +12,13 @@ orders as (
 
 ),
 
+employees as(
+
+select * from {{ ref('employees') }}
+
+),
+
+
 customer_orders_summary as (
 
     select
@@ -42,6 +49,7 @@ joined as (
         customer_orders_summary.lifetime_spend_pretax,
         customer_orders_summary.lifetime_tax_paid,
         customer_orders_summary.lifetime_spend,
+        e.employee_id,
 
         case
             when customer_orders_summary.is_repeat_buyer then 'returning'
@@ -52,7 +60,9 @@ joined as (
 
     left join customer_orders_summary
         on customers.customer_id = customer_orders_summary.customer_id
+        left join employees as e on e.customer_id = customers.customer_id
 
 )
 
-select * from joined
+select * from joined 
+    order by employee_id
