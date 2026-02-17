@@ -1,0 +1,17 @@
+groups:
+  - name: marketing
+    owner:
+      name: Firstname Lastname
+      email: marketing@jaffleshop.com
+      slack: marketing-data
+      github: marketing-data-team
+  - name: product
+    owner:
+      email: product@jaffleshop.com
+      github: product-data-team
+  - name: finance
+    owner:
+      name: Firstname Lastname 
+      email: finance@jaffleshop.com
+      slack: finance-data
+      github: marketing-data-team
