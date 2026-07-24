@@ -1,4 +1,4 @@
-name: dbt Core Snowflake CI
+name: dbt Core Snowflake CD
 
 on:
   push:
@@ -39,6 +39,6 @@ jobs:
 
       - name: Run dbt
         run: |
-          dbt deps
           dbt debug
+          dbt deps
           dbt run

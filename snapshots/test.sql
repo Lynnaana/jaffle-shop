@@ -1,2 +1,1 @@
-select * from {{ ref('customers_snapshot') }}
-order by id
+select * from analytics.snapshots.customers_snapshot;
